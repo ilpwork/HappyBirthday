@@ -4,73 +4,110 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivityDice">
 
-    <ImageView
-        android:id="@+id/imageView"
+
+    <EditText
+        android:id="@+id/costOfService"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/birtday_card_description"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/androidparty" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif-light"
-        android:shadowColor="@android:color/darker_gray"
-        android:shadowDx="5"
-        android:shadowDy="10"
-        android:shadowRadius="10"
-        android:text="Happy Birthday, Sam!"
-        android:textColor="@color/black"
-        android:textSize="36sp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="@string/cost_of_service"
+        android:inputType="numberDecimal"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="sans-serif-light"
-        android:shadowColor="@android:color/darker_gray"
-        android:shadowDx="5"
-        android:shadowDy="10"
-        android:shadowRadius="10"
-        android:text="From Emma."
-        android:textColor="@color/black"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:text="@string/service_question"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/costOfService" />
+
+    <RadioGroup
+        android:id="@+id/tipOptions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="16dp"
+        android:checkedButton="@id/optionTwenty"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+        <RadioButton
+            android:id="@+id/optionTwenty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/option_20"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/optionEighteen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/option_18"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/optionFifteen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/option_15"
+            android:textSize="24sp" />
+    </RadioGroup>
+
+    <Switch
+        android:id="@+id/round_up_switch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/round_up_tip"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tipOptions"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/calculateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Roll"
+        android:layout_marginTop="16dp"
+        android:text="@string/calculate"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintTop_toBottomOf="@id/round_up_switch" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="160dp"
-        android:layout_height="200dp"
-        android:layout_marginBottom="128dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/tipResult"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/tip_amount"
+        tools:text="Tip Amount: $10"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:srcCompat="@drawable/dice_2" />
+        app:layout_constraintTop_toBottomOf="@+id/calculateButton" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
